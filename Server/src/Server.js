@@ -1,5 +1,5 @@
-const http = require('http');
-const Express = require('express');
+import http from 'http'; // ts가 알아서 require 변환해줌
+import Express from 'express';
 
 //JavaScript Object Notation => JSON
 const data = {
