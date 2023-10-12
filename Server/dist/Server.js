@@ -1,6 +1,10 @@
-import http from 'http'; // ts가 알아서 require 변환해줌
-import Express from 'express';
-
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const http_1 = __importDefault(require("http")); // ts가 알아서 require 변환해줌
+const express_1 = __importDefault(require("express"));
 //JavaScript Object Notation => JSON
 const data = {
     name: "밴드",
@@ -22,19 +26,14 @@ const data = {
         { id: 15, name: "강신우" },
     ]
 };
-
-const app = new Express();
-
-app.get("/", (req, res)=>{
+const app = (0, express_1.default)();
+app.get("/", (req, res) => {
     res.json(data);
 });
-
-app.get("/image", (req, res)=>{
+app.get("/image", (req, res) => {
     // 아직 미구현
 });
-
-const server = http.createServer(app);
-
-server.listen(50000, () => { 
+const server = http_1.default.createServer(app);
+server.listen(50000, () => {
     console.log("서버가 50000번 포트에서 실행 중입니다.");
 });
